@@ -1,0 +1,47 @@
+
+.album-lists {
+    margin: 50px auto;
+}
+
+
+.horizontal.card {
+    /* padding: 10px; */
+    box-shadow: 5px 4px 11px #00000029;
+    border-radius: 7px;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+
+    flex-grow: 0.2;
+    background-color: white;
+
+  }
+  
+  .horizontal.card img {
+    max-width: 300px;
+    min-width: 150px;
+    width: 100%;
+    border-radius: 7px 7px 0 0;
+    
+  }
+  
+.text-box {
+    padding: 10px;
+  
+  }
+  
+ .title-box {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .flex {
+    display: flex;
+    gap: 10px;
+  }
+  

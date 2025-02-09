@@ -1,0 +1,43 @@
+
+
+  /* .flex-item {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  } */
+   
+
+  .album {
+    display: flex;
+    margin: 10px auto;
+    background-color: transparent;
+    color: white;
+}
+
+.album img {
+    width: 80px;
+    min-width: 80px;
+    height: auto;
+    border-radius: 7px;
+}
+
+.album .text-box {
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.w-200 {
+    max-width: 900px;
+    width: 100%;
+}
+.date {
+    max-width: 150px;
+    white-space: nowrap;
+    width: 100%;
+    text-align: right;
+}
