@@ -5,20 +5,20 @@ import "../styles/AlbumLists.css"
 
 
 export const AlbumLists = ({
-    title, 
     albums, 
     offset, 
+    totalNumber,
     loadMore,
     handleSort,
 } : {
-    title: string, 
     albums: Album[], 
-    offset:number, 
+    offset: number, 
+    totalNumber: number,
     loadMore:() => void,
     handleSort:(prop: string) => void
 }) => {
     const observerRef = useRef<HTMLDivElement | null>(null);
-    const selectOptions = ["Default", "Newest", "Oldest", "Artist A-Z", "Artist Z-A", 'Album A-Z', "Album Z-A"]
+    const selectOptions = ["Most Popular", "Newest", "Oldest", "Artist A-Z", "Artist Z-A", 'Album A-Z', "Album Z-A"]
 
     useEffect(() => {
         const target = observerRef.current;
@@ -27,10 +27,11 @@ export const AlbumLists = ({
         const observer = new IntersectionObserver(
           (entries) => {
             if (entries[0].isIntersecting) {
+                console.log('test');
                 loadMore();
             }
           },
-          { threshold: 1.0 }
+          { threshold: 0.3 }
         );
         observer.observe(target);
         
@@ -40,21 +41,28 @@ export const AlbumLists = ({
         return () => observer.disconnect(); 
       }, [albums, loadMore, offset]);
 
+      const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      };
+
 
     if(albums.length === 0) <></>;
 
     return (
-        <div className="album-lists container">
-            <div className='title-box'>
-             <h4>{title}</h4>
-             <select onChange={(e) => handleSort((e.target.value))}>
+        <div className="album-lists">
+            <div className='custom-select'>
+
+             <select className='sort' onChange={(e) => handleSort((e.target.value))}>
                {selectOptions.map((option) => (
                     <option key={option} value={option}>{option}</option>
                ))}
                
              </select>
              </div>
-            <div className="">
+            <div className="grid">
             {albums.map((album) => (
                 <AlbumCard 
                 id={album.id.attributes["im:id"]}
@@ -66,14 +74,16 @@ export const AlbumLists = ({
                 />
             ))}
             </div>
-            { offset < 60 ? (
-            <div ref={observerRef} className=''>
+            { offset < totalNumber ? (
+            <div ref={observerRef} className='loading-box'>
                 <h2>Loading...</h2>
             </div>
             ) : (
-                <button>
+                <div className='loading-box'>
+                <button className='btn' onClick={scrollToTop}>
                     Scroll to Top
                 </button>
+                </div>
             )}            
         </div>
     )

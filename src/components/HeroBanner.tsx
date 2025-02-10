@@ -21,20 +21,21 @@ export const HeroBanner = ({searchInput, setSearchInput} : { searchInput: string
 
                 <div className="content">
                 <h1 className="title">
-                    Top iTune Albums
-                    <div className="aurora">
+                    iTunes Top Albums
+                    {/* <div className="aurora">
                     <div className="aurora__item"></div>
                     <div className="aurora__item"></div>
                     <div className="aurora__item"></div>
                     <div className="aurora__item"></div>
-                    </div>
-                    <p>Find Your Next Favorite Album</p>
+                    </div> */}
                 </h1>
+                <p>Find Your Next Favorite Album</p>
+
                 </div>
 
                     <form className="search-form" onSubmit={(e) => handleSearch(e)}>
                         <input type="text" placeholder="Search album, artist..." onChange={(e) => setSearchInput(e.target.value)}/>
-                        <button>Search</button>
+                        <button className='btn'>Search</button>
                     </form>
                 </div>
             </div>

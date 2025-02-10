@@ -27,23 +27,34 @@ export const SearchResultPage = () => {
         }
       }, [location.search, albums]);
     
+console.log(filteredAlbums);
     return (
-    <div className='container'>
-        <h3>Search result for...</h3>
-        <p>{searchInput}</p>
-        <div>
-        {filteredAlbums.map((album) => (
-                <AlbumCard 
-                id={album.id.attributes["im:id"]}
-                image={album['im:image'][2].label} 
-                name={album['im:name'].label}
-                artist={album['im:artist'].label}
-                releaseDate={album['im:releaseDate'].attributes.label}
-                layout={'album'}
-                />
-            ))}
+    <div className='container-lg search-page'>
+      {filteredAlbums.length === 0 ? (
+        <div className='text-box'>
+           <h1>No matches were found</h1>
+           <p>Please try other inputs</p>
         </div>
-        
+      ) : (
+        <div className='text-box'>
+          <h1>Search result for...</h1>
+          <p>{searchInput}</p>
+        </div>
+      )}
+        <div className='album-lists'>
+          <div className='flex'>
+          {filteredAlbums.map((album) => (
+                  <AlbumCard 
+                  id={album.id.attributes["im:id"]}
+                  image={album['im:image'][2].label} 
+                  name={album['im:name'].label}
+                  artist={album['im:artist'].label}
+                  releaseDate={album['im:releaseDate'].attributes.label}
+                  layout={'album'}
+                  />
+              ))}
+          </div>
+        </div>
     </div>
     )
 }

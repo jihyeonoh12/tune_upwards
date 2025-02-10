@@ -1,0 +1,53 @@
+.album-detail .inner-container {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.inner-container img {
+    border-radius: 10px;
+    height: 100%;
+}
+.album-detail .text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px auto;
+    padding: 20px 40px;
+}
+
+.album-detail .text-box p {
+    margin: 20px 0;
+}
+
+.like-btn {
+ margin: 10px 0;
+}
+.song-list {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+.song-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+.song-card.text {
+    margin-left: 10px;
+}
+
+audio {
+    max-width: 250px;
+    width: 100%;
+}
+
+i.bi::before {
+    width: 32px;
+  }

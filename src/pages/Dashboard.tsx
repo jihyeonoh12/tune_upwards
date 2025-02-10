@@ -1,32 +1,34 @@
 import { useState, useEffect, useCallback, useContext } from 'react';
-import { HorizonList } from '../components/HorizonList.js';
 import { AlbumLists } from '../components/AlbumLists.js';
 import { HeroBanner } from '../components/HeroBanner.js';
 import { Album } from '../types/index.js';
 import { sortAlbums } from '../utilities/sortAlbums.js';
 import { AlbumContext } from '../contexts/AlbumContext';
-
 import "../styles/Dashboard.css"
 
 const Dashboard = () => {
-    const { albums, favorites, loading, error } = useContext(AlbumContext);
+    const { albums, loading, error } = useContext(AlbumContext);
     const [sortedAlbumList, setSortedAlbumList] = useState<Album[]>([]);
     const [visibleAlbums, setVisibleAlbums] = useState<Album[]>([]);
     const [offset, setOffset] = useState(10);
     const [searchInput, setSearchInput] = useState("");
+    const [totalNumber, setTotalNumber] = useState(0);
 
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         if(albums.length !== 0) {
             setSortedAlbumList(albums);
             setVisibleAlbums(albums.slice(0, 10))
+            setTotalNumber(albums.length);
         } 
     }, [albums])
 
     const handleSort =  (option : string) => {
         setOffset(10);
 
-        const sortedResult = option === "Default" ? albums : sortAlbums(albums, option);
+        const sortedResult = option === "Most Popular" ? albums : sortAlbums(albums, option);
         setSortedAlbumList(sortedResult);
         setVisibleAlbums(sortedResult.slice(0, 10))
     }
@@ -41,7 +43,7 @@ const Dashboard = () => {
       }, [sortedAlbumList])
 
 
-    if(loading) return <div>Loading...</div>
+    if(loading) return <div className='loading-box'><h1>Loading...</h1></div>
     if(error) return <div>{error}</div>
     
     return (
@@ -51,16 +53,13 @@ const Dashboard = () => {
             setSearchInput={setSearchInput}
             />
             <div className='dashboard-body'>
-                {Object.keys(favorites).length > 0 && (
-            <HorizonList title={"Your Favorites "} />
-
-                 )} 
             <AlbumLists 
-            title={"Top Album List"} 
             albums={visibleAlbums} 
             offset={offset} 
+            totalNumber={totalNumber}
             loadMore={loadMore} 
-            handleSort={handleSort}/>
+            handleSort={handleSort}
+            />
             </div>
    
         </div>

@@ -12,18 +12,14 @@ export const HorizonList = ({title} : {title: string}) => {
     if(Object.keys(favorites).length === 0) <></>;
 
     return (
-        <div className="container">
+        <div className="">
             <div className="title-box">
                 <h4>
                 {title}{
                 title === 'Your Favorites ' && (
                     <i className="bi bi-heart-fill"></i>
                 )}</h4>
-                {Object.keys(favorites).length > 4 && (
-                    <Link className="btn" to={'/favorites'} >
-                        View More
-                    </Link>
-                )}
+               
         
 
             </div>
@@ -38,6 +34,11 @@ export const HorizonList = ({title} : {title: string}) => {
                 />
             ))}
             </div>
+            {Object.keys(favorites).length > 4 && (
+                    <Link className="btn" to={'/favorites'} >
+                        View More
+                    </Link>
+                )}
         </div>
     )
 }

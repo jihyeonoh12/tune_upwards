@@ -13,6 +13,9 @@ export const AlbumProvider = ({ children }: { children: ReactNode }) => {
 
 
   useEffect(() => {
+    const savedData = localStorage.getItem('tune_upwards') ? JSON.parse(localStorage.getItem('tune_upwards')) : {};
+    setFavorites(savedData);
+
     const fetchData = async () => {
         try {
             setLoading(true);
@@ -31,7 +34,7 @@ export const AlbumProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <AlbumContext.Provider value={{ albums, loading, favorites, setFavorites, error }}>
+    <AlbumContext.Provider value={{ albums, loading, setLoading, favorites, setFavorites, error }}>
       {children}
     </AlbumContext.Provider>
   );

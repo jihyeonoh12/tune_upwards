@@ -10,7 +10,7 @@ const toggleLike = (id, data, setFavorites) => {
           detail: { ...data },
         };
       }
-  
+      localStorage.setItem('tune_upwards', JSON.stringify(updated));
       return updated;
     });
   };

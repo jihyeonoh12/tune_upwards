@@ -2,12 +2,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css'
-// import SignIn from './pages/SignIn'
 import Dashboard from './pages/Dashboard';
 import {AlbumPage} from './pages/AlbumPage';
 import { SearchResultPage } from "./pages/SearchResultPage";
 import { AlbumProvider } from './contexts/AlbumContext';
 import { FavoritesPage } from "./pages/FavoritesPage";
+import Navbar from "./components/Navbar";
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   return (
     <AlbumProvider>
       <Router>
+      <Navbar />
         <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/album/:id" element={<AlbumPage />} />

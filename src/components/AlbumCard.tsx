@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import noAlbumCover from "../assets/noAlbumCover.jpg"
 
 export const AlbumCard = ({
     id,
@@ -15,21 +17,39 @@ export const AlbumCard = ({
     layout: string,
     releaseDate?: string
 }) => {
+    const [imgScr, setImgScr] = useState(image.split("jpg/")[0] + 'jpg/300x300bb.jpg');
+
+    const handleError = () => {
+        setImgScr(noAlbumCover);
+    };
 
     if (!image) return <></>;
 
-
     return (
-        <Link className={`flex-item card ${layout}`} to={`/album/${id}`}>
-            <img src={image.split("jpg/")[0] + 'jpg/300x300bb.jpg'} alt="" />
-            <div className="flex text-box">
+        <Link className={`${layout} card`} to={`/album/${id}`}>
+
+            <div className="flip-card">
+            <div className="flip-card-inner">
+                <div className="flip-card-front">
+                <img 
+                src={imgScr} 
+                alt={name + '-album_cover'} 
+                loading="lazy"
+                onError={handleError}
+                />
+                </div>
+                <div className="flip-card-back">
+                <div className="text-box">
                 <div className="w-200">
-                <p>{name}</p>
-                <h4>{artist}</h4>
+                <h4>{name}</h4>
+                <p>{artist}</p>
                 </div>
                 {releaseDate && (
-                    <div className="date">{releaseDate}</div>
+                    <h5>{releaseDate}</h5>
                 )}
+            </div>
+                </div>
+            </div>
             </div>
 
         </Link>
