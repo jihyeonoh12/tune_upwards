@@ -14,14 +14,20 @@
   position: relative;
 }
 
+.container-xlg {
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
 
 .dashboard-body {
   margin: auto;
   padding: 0 15px;
+  
 }
 
 button, .btn {
-  /* max-width: 100px; */
   width: fit-content;
   white-space: nowrap;
   cursor: pointer;
@@ -41,19 +47,21 @@ button, .btn {
 .btn:hover{
   background-color: white;
   color: black;
-  /* box-shadow: 0px 0em 1em 0em white;; */
-
 }
 
-input:hover,
-input:focus,
-input:focus-visible
- {
-  min-width: 300px;
-  max-width: 300px;
-  background-color: transparent;
-  outline: none;
+button, .sub_btn, .sub_btn {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid white;
+  width: fit-content;
+  padding: 10px;
+  transition: 0.25s;
 }
+
+.sub_btn:hover {
+  padding: 10px 20px;
+}
+
 
 form {
   display: flex;
@@ -74,14 +82,20 @@ input {
   color: white;
   background-color: transparent;
   transition: 0.25s;
-
 }
 
 input::placeholder {
   color: rgba(255, 255, 255, 0.5);
-
 }
 
+input:hover,
+input:focus,
+input:focus-visible
+ {
+  min-width: 240px;
+  background-color: transparent;
+  outline: none;
+}
 
 p {
   font-size: 16px;
@@ -97,6 +111,10 @@ a.link {
 text-decoration: none;
 color: white;
 border-bottom: 1px solid white;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.696);
 }
 
 

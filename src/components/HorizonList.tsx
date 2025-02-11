@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { AlbumCard } from "./AlbumCard"
 import { useContext } from "react";
-import { AlbumContext } from '../contexts/AlbumContext';
+import AlbumContext from '../contexts/AlbumContext';
 import '../styles/HorizontalList.css'
 
 
@@ -19,8 +19,6 @@ export const HorizonList = ({title} : {title: string}) => {
                 title === 'Your Favorites ' && (
                     <i className="bi bi-heart-fill"></i>
                 )}</h4>
-               
-        
 
             </div>
             <div className="flex">

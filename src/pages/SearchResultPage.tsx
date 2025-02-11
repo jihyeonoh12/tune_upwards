@@ -1,11 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { searchAlbums } from '../utilities/searchAlbums';
-import { AlbumContext } from '../contexts/AlbumContext';
+import AlbumContext from '../contexts/AlbumContext';
 import { AlbumCard } from "../components/AlbumCard";
 import { Album } from '../types/index.js';
-
-
 
 export const SearchResultPage = () => {
     const location = useLocation();
@@ -27,7 +25,6 @@ export const SearchResultPage = () => {
         }
       }, [location.search, albums]);
     
-console.log(filteredAlbums);
     return (
     <div className='container-lg search-page'>
       {filteredAlbums.length === 0 ? (

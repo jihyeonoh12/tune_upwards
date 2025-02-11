@@ -45,17 +45,18 @@ export interface Song {
     trackId: number,
     trackViewUrl: string,
     artworkUrl60: string,
-    collectionName?: string
+    collectionName?: string,
     artistName: string,
 }
 
 export interface Collection {
+    releaseDate: string,
     collectionName: string,
-    artworkUrl60: string
+    artworkUrl60: string,
     artistName: string,
     primaryGenreName: string,
-    collectionViewUrl: string
-    artistViewUrl: string
+    collectionViewUrl: string,
+    artistViewUrl: string,
     collectionId: number
 }
 

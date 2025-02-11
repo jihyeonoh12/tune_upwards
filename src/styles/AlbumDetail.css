@@ -18,10 +18,19 @@
     align-items: flex-start;
     margin: 20px auto;
     padding: 20px 40px;
+    width: 100%;
 }
 
 .album-detail .text-box p {
     margin: 20px 0;
+}
+
+.album-detail .button-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
 }
 
 .like-btn {
@@ -51,3 +60,8 @@ audio {
 i.bi::before {
     width: 32px;
   }
+
+.playbar {
+    max-width: 500px;
+    width: 100%;
+}

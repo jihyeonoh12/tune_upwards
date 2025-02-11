@@ -1,7 +1,7 @@
 import { Album } from '../types/index.js';
 
 
-export const sortAlbums = (albums : Album, option: string) => {
+export const sortAlbums = (albums : Album[], option: string) => {
 
 return [...albums].sort((a, b) => {
     if (option === "Artist A-Z") {

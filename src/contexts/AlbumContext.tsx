@@ -1,9 +1,26 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
-import {fetchTopItuneAlbums} from '../utilities/api.js'
+import {fetchTopItuneAlbums} from '../utilities/api.ts'
 import { Album, Liked } from '../types/index.js';
 
+interface AlbumContextType {
+  albums : Album[],
+  loading: boolean,
+  setLoading: (prop: boolean) => void,
+  favorites: Liked,
+  setFavorites: (prop: Liked) => void,
+  error: string
+}
 
-export const AlbumContext = createContext();
+const defaultContext: AlbumContextType = {
+  albums: [],
+  loading: false,
+  setLoading: () => {},
+  favorites: {},
+  setFavorites: () => {},
+  error: '',
+};
+
+const AlbumContext = createContext<AlbumContextType>(defaultContext);
 
 export const AlbumProvider = ({ children }: { children: ReactNode }) => {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -13,8 +30,10 @@ export const AlbumProvider = ({ children }: { children: ReactNode }) => {
 
 
   useEffect(() => {
-    const savedData = localStorage.getItem('tune_upwards') ? JSON.parse(localStorage.getItem('tune_upwards')) : {};
-    setFavorites(savedData);
+    const savedData = JSON.parse(localStorage.getItem('tune_upwards') || '{}');
+    setFavorites(() => ({
+    ...savedData
+  }));
 
     const fetchData = async () => {
         try {
@@ -39,3 +58,4 @@ export const AlbumProvider = ({ children }: { children: ReactNode }) => {
     </AlbumContext.Provider>
   );
 };
+export default AlbumContext;

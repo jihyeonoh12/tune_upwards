@@ -32,6 +32,7 @@ export const AlbumCard = ({
             <div className="flip-card-inner">
                 <div className="flip-card-front">
                 <img 
+                width="300" height="300" 
                 src={imgScr} 
                 alt={name + '-album_cover'} 
                 loading="lazy"

@@ -15,10 +15,9 @@ export const HeroBanner = ({searchInput, setSearchInput} : { searchInput: string
    }
    
     return (
-        <div className="hero-banner gradient-bg flex">
-            <div className="layer-bg">
-                <div className="text-box">
-
+        <div className="hero-banner">
+            {/* <div className="layer-bg"> */}
+            <div className="text-box">
                 <div className="content">
                 <h1 className="title">
                     iTunes Top Albums
@@ -30,15 +29,13 @@ export const HeroBanner = ({searchInput, setSearchInput} : { searchInput: string
                     </div> */}
                 </h1>
                 <p>Find Your Next Favorite Album</p>
-
                 </div>
-
                     <form className="search-form" onSubmit={(e) => handleSearch(e)}>
                         <input type="text" placeholder="Search album, artist..." onChange={(e) => setSearchInput(e.target.value)}/>
                         <button className='btn'>Search</button>
                     </form>
-                </div>
             </div>
+            {/* </div> */}
         </div>
     )
 }

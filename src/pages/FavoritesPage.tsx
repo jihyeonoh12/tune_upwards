@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback, useContext } from 'react';
-import { AlbumContext } from '../contexts/AlbumContext';
+import { useContext } from 'react';
+import AlbumContext from '../contexts/AlbumContext';
 import { AlbumCard } from "../components/AlbumCard"
 import "../styles/AlbumLists.css"
 

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
-import { AlbumContext } from '../contexts/AlbumContext';
+import  AlbumContext  from '../contexts/AlbumContext';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-    <div className='container-lg'>
+    <div className='container-xlg'>
         <Link className='home' to="/">TuneUpwards</Link>
       {Object.keys(favorites).length > 0 && (
            <Link to="/favorites">Favorites</Link>

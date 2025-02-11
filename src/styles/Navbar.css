@@ -11,7 +11,7 @@
 
     top: 0;
   }
-  .navbar .container-lg {
+  .navbar .container-xlg {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,16 +41,3 @@
   .navbar-links a:hover {
     text-decoration: underline;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar-links {
-      flex-direction: column;
-      display: none;
-    }
-  
-    .navbar-links.active {
-      display: flex;
-    }
-  }
-  
