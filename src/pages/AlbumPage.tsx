@@ -70,7 +70,7 @@ export const AlbumPage = () => {
       };
 
     if(loading) return <></>;
-    if(error || songs.length === 0) return <div>{error}</div>;
+    if(error) return <div className='error container'><h2>{error}</h2></div>
     
     return (
         <div className='container album-detail'>

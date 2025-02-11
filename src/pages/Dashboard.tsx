@@ -42,7 +42,7 @@ const Dashboard = () => {
       }, [sortedAlbumList])
 
 
-    if(error) return <></>
+    if(error) return <div className='error container'><h2>{error}</h2></div>
     
     return (
         <div className='dashboard'>

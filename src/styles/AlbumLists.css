@@ -4,6 +4,10 @@
   margin: auto;
 }
 
+.album-lists.loading {
+  height: 800px;
+}
+
 .album-lists .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);;

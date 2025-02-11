@@ -47,14 +47,12 @@ export const AlbumLists = ({
           behavior: 'smooth',
         });
       };
-      console.log(totalNumber);
 
-    if(visibleAlbums.length === 0) <></>;
+    if(visibleAlbums.length === 0) return <div className='album-lists loading'>Loading...</div>
 
     return (
         <div className="album-lists">
             <div className='custom-select'>
-
              <select className='sort' onChange={(e) => handleSort((e.target.value))}>
                {selectOptions.map((option) => (
                     <option key={option} value={option}>{option}</option>
