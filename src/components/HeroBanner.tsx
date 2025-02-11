@@ -16,7 +16,6 @@ export const HeroBanner = ({searchInput, setSearchInput} : { searchInput: string
    
     return (
         <div className="hero-banner">
-            {/* <div className="layer-bg"> */}
             <div className="text-box">
                 <div className="content">
                 <h1 className="title">
@@ -29,7 +28,6 @@ export const HeroBanner = ({searchInput, setSearchInput} : { searchInput: string
                         <button className='btn'>Search</button>
                     </form>
             </div>
-            {/* </div> */}
         </div>
     )
 }

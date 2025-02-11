@@ -87,7 +87,6 @@ export const AlbumPage = () => {
                         <h5>{album.primaryGenreName}</h5>
                         <h2>{album.collectionName}</h2>
                         <h4>{album.artistName}</h4>
-                        {/* <p>{album.copyright}</p> */}
                         <p>Released : {(album.releaseDate).split("T")[0]}</p>
                     </div>
                     <div className='button-box'>

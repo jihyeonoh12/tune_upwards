@@ -116,6 +116,7 @@ input {
   color: white;
   background-color: transparent;
   transition: 0.25s;
+  border-radius: 0;
 }
 
 input::placeholder {
