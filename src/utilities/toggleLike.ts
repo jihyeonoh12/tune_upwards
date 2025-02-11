@@ -1,5 +1,9 @@
-const toggleLike = (id, data, setFavorites) => {
-    setFavorites((prev) => {
+import { Liked, Collection } from '../types/index.js';
+type SetFavorites = React.Dispatch<React.SetStateAction<Liked>>;
+
+
+const toggleLike = (id : number, data: Collection, setFavorites: SetFavorites) => {
+    setFavorites((prev : Liked) => {
       const updated = { ...prev };
   
       if (updated[id] && updated[id].liked) {
@@ -7,7 +11,7 @@ const toggleLike = (id, data, setFavorites) => {
       } else {
         updated[id] = {
           liked: !(prev[id]?.liked || false),
-          detail: { ...data },
+          detail: { ...data},
         };
       }
       localStorage.setItem('tune_upwards', JSON.stringify(updated));

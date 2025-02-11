@@ -21,12 +21,6 @@ export const HeroBanner = ({searchInput, setSearchInput} : { searchInput: string
                 <div className="content">
                 <h1 className="title">
                     iTunes Top Albums
-                    {/* <div className="aurora">
-                    <div className="aurora__item"></div>
-                    <div className="aurora__item"></div>
-                    <div className="aurora__item"></div>
-                    <div className="aurora__item"></div>
-                    </div> */}
                 </h1>
                 <p>Find Your Next Favorite Album</p>
                 </div>

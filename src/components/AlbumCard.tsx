@@ -10,7 +10,7 @@ export const AlbumCard = ({
     layout,
     releaseDate
 } : {
-    id?: string,
+    id: number,
     image: string, 
     name: string,
     artist: string,

@@ -39,7 +39,7 @@ export const AlbumPage = () => {
         const getSongs = async () => {
             try {
              setLoading(true);
-              const response = await fetchSongs(id);
+              const response = await fetchSongs(id as string);
               setSongs(response.results);
               setAlbum(response.results[0]);
               setImgSrc((response.results[0].artworkUrl60).split("jpg/")[0] + 'jpg/400x400bb.jpg');
@@ -95,7 +95,7 @@ export const AlbumPage = () => {
                         <p>Released : {(album.releaseDate).split("T")[0]}</p>
                     </div>
                     <div className='button-box'>
-                    <button className="btn like-btn" onClick={() => {toggleLike(id ,album, setFavorites)}} >
+                    <button className="btn like-btn" onClick={() => {toggleLike(parseInt(id as string) ,album, setFavorites)}} >
                         <h4 className={`text-${likedIcon ? 'danger' : 'dark'}`}>Like
                         <i className={`bi bi-heart${likedIcon ? '-fill' : ''}`}></i>
                         </h4>

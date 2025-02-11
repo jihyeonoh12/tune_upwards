@@ -9,24 +9,8 @@ const fetchTopItuneAlbums = async () => {
         console.error(err);
     }
 }
-const fetchByIds = async (ablumIds) => {
-    try {
-        const response = await fetch(`https://itunes.apple.com/lookup?id=${ablumIds.slice(0, 10).join(",")}`, {
-            method: "GET",
-            header: {
-                "Content-Type" : "application/json"
-            }
-        });
-        if(!response.ok) throw new Error("error fetching ids");
-        const results = await response.json();
 
-        return results;
-    } catch (err) {
-        console.error(err);
-    }
-}
-
-const fetchSongs = async (albumId) => {
+const fetchSongs = async (albumId : string) => {
     try {  
         const response = await fetch(`https://itunes.apple.com/lookup?id=${albumId}&entity=song`);
         if(!response.ok) throw new Error("error fetching song preview");
@@ -39,4 +23,4 @@ const fetchSongs = async (albumId) => {
     }
 }
 
-export { fetchTopItuneAlbums, fetchByIds, fetchSongs };
+export { fetchTopItuneAlbums, fetchSongs };

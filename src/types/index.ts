@@ -1,12 +1,12 @@
 export interface User {
-    email : string,
-    favorites : [],
-    histories : [],
+    email : string;
+    favorites : [];
+    histories : [];
 }
 
 
 export interface Image {
-    label: string
+    label: string;
 }
 
 
@@ -14,57 +14,57 @@ export interface Image {
 export interface Album {
     id: {
         attributes: {
-            'im:id' : string
+            'im:id' : number;
         }
     }
     category: {
-        label: string
+        label: string;
     }
-    'im:image': Image[]
+    'im:image': Image[];
     'im:artist': {
-        label: string
+        label: string;
     }
     'im:name': {
-        label: string
+        label: string;
     }
     'im:releaseDate': {
         attributes: {
-            label: string
+            label: string;
         }
     }
     link: {
         attributes: {
-            href: string
+            href: string;
         }
     }
 }
 
 export interface Song {
-    trackName: string,
-    previewUrl: string,
-    trackId: number,
-    trackViewUrl: string,
-    artworkUrl60: string,
-    collectionName?: string,
-    artistName: string,
+    trackName: string;
+    previewUrl: string;
+    trackId: number;
+    trackViewUrl: string;
+    artworkUrl60: string;
+    collectionName?: string;
+    artistName: string;
 }
 
 export interface Collection {
-    releaseDate: string,
-    collectionName: string,
-    artworkUrl60: string,
-    artistName: string,
-    primaryGenreName: string,
-    collectionViewUrl: string,
-    artistViewUrl: string,
+    releaseDate: string;
+    collectionName: string;
+    artworkUrl60: string;
+    artistName: string;
+    primaryGenreName: string;
+    collectionViewUrl: string;
+    artistViewUrl: string;
     collectionId: number
 }
 
 export interface LikedContent {
-    liked: boolean
-    detail : Collection[]
+    liked: boolean;
+    detail : Collection;
 }
 
 export  interface Liked {
-    [key: number]: LikedContent
+    [key: number]: LikedContent;
 }

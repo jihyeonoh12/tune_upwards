@@ -2,12 +2,14 @@ import { createContext, useState, useEffect, ReactNode } from 'react';
 import {fetchTopItuneAlbums} from '../utilities/api.ts'
 import { Album, Liked } from '../types/index.js';
 
+type SetFavorites = React.Dispatch<React.SetStateAction<Liked>>;
+
 interface AlbumContextType {
   albums : Album[],
   loading: boolean,
   setLoading: (prop: boolean) => void,
   favorites: Liked,
-  setFavorites: (prop: Liked) => void,
+  setFavorites: SetFavorites,
   error: string
 }
 
@@ -19,6 +21,8 @@ const defaultContext: AlbumContextType = {
   setFavorites: () => {},
   error: '',
 };
+
+
 
 const AlbumContext = createContext<AlbumContextType>(defaultContext);
 
