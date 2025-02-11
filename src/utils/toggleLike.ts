@@ -1,4 +1,4 @@
-import { Liked, Collection } from '../types/index.js';
+import { Liked, Collection } from '../types/index';
 type SetFavorites = React.Dispatch<React.SetStateAction<Liked>>;
 
 

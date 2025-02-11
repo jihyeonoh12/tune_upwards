@@ -1,13 +1,12 @@
 import { useState, useEffect, useCallback, useContext } from 'react';
-import { AlbumLists } from '../components/AlbumLists.js';
-import { HeroBanner } from '../components/HeroBanner.js';
-import { Album } from '../types/index.js';
-import { sortAlbums } from '../utilities/sortAlbums.js';
+import { sortAlbums } from '../utils/sortAlbums';
 import AlbumContext from '../contexts/AlbumContext';
-import "../styles/Dashboard.css"
+import { AlbumLists } from '../components/AlbumLists';
+import { HeroBanner } from '../components/HeroBanner';
+import { Album } from '../types/index';
 
 const Dashboard = () => {
-    const { albums, loading, error } = useContext(AlbumContext);
+    const { albums, error } = useContext(AlbumContext);
     const [sortedAlbumList, setSortedAlbumList] = useState<Album[]>([]);
     const [visibleAlbums, setVisibleAlbums] = useState<Album[]>([]);
     const [offset, setOffset] = useState(10);
@@ -43,7 +42,6 @@ const Dashboard = () => {
       }, [sortedAlbumList])
 
 
-    if(loading) return <></>
     if(error) return <></>
     
     return (

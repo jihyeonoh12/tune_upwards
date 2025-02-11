@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
-import {fetchTopItuneAlbums} from '../utilities/api.ts'
-import { Album, Liked } from '../types/index.js';
+import {fetchTopItuneAlbums} from '../utils/api'
+import { Album, Liked } from '../types/index';
 
 type SetFavorites = React.Dispatch<React.SetStateAction<Liked>>;
 

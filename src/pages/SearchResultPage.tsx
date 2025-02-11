@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import { searchAlbums } from '../utilities/searchAlbums';
+import { searchAlbums } from '../utils/searchAlbums';
 import AlbumContext from '../contexts/AlbumContext';
 import { AlbumCard } from "../components/AlbumCard";
-import { Album } from '../types/index.js';
+import { Album } from '../types/index';
 
 export const SearchResultPage = () => {
     const location = useLocation();

@@ -1,4 +1,4 @@
-import { Album } from '../types/index.js';
+import { Album } from '../types/index';
 
 export const searchAlbums = (albums: Album[], searchInput: string) => {
     if (!searchInput.trim()) return []; 

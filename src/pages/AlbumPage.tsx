@@ -1,13 +1,12 @@
 import { useEffect, useState, useContext, useRef } from 'react';
-import { fetchSongs } from '../utilities/api.ts'
 import { useParams } from 'react-router-dom';
-import { Song, Collection } from '../types/index.js';
-import { SongCard } from '../components/SongCard.js';
+import { fetchSongs } from '../utils/api'
+import toggleLike from '../utils/toggleLike'
+import { Song, Collection } from '../types/index';
+import { SongCard } from '../components/SongCard';
 import AlbumContext from '../contexts/AlbumContext';
-import toggleLike from "../utilities/toggleLike";
 import noAlbumCover from "../assets/noAlbumCover.jpg"
 import "../styles/AlbumDetail.css"
-
 
 export const AlbumPage = () => {
     const { id } = useParams(); 
@@ -29,9 +28,6 @@ export const AlbumPage = () => {
     const [imgSrc, setImgSrc] = useState(noAlbumCover);
     const audioRef = useRef<HTMLAudioElement>(null);
     const [likedIcon, setLikedIcon] = useState(false);
-
-    // const likedIcon = favorites[id] && favorites[id].liked;
-
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -73,8 +69,8 @@ export const AlbumPage = () => {
         }
       };
 
-    if(loading) return <div className='loading-box'><h1>Loading...</h1></div>
-    if(error || songs.length === 0) return <div>{error}</div>
+    if(loading) return <></>;
+    if(error || songs.length === 0) return <div>{error}</div>;
     
     return (
         <div className='container album-detail'>
