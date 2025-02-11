@@ -73,20 +73,25 @@
   transition: transform 0.8s;
   transform-style: preserve-3d;
   height: 100%;
+  position: relative;
 }
 
 .card:hover .album-card-inner {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .album-card-front,
 .album-card-back {
   place-items: center;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; 
 }
 
 .album-card-front {
   background-color: black;
+  transform: rotateY(0deg); /* Ensure it's properly set */
+
 }
 
 .album-card-back {
@@ -105,6 +110,7 @@
   border-radius: 5px;
   padding: 10px;
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .album-card:hover .album-card-front{
@@ -184,5 +190,15 @@ select {
 @media (min-width: 1200px) {
   .album-lists .grid {
     grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@supports (-webkit-backface-visibility: hidden) {
+  .album-card-front {
+    -webkit-transform: rotateY(0deg);
+  }
+
+  .album-card-back {
+    -webkit-transform: rotateY(180deg);
   }
 }
