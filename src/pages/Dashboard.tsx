@@ -25,7 +25,6 @@ const Dashboard = () => {
     }, [albums])
 
     const handleSort = useCallback((option : string) => {
-        console.log(option);
         setOffset(10);
         const sortedResult = option === "Most Popular" ? albums : sortAlbums(albums, option);
         setSortedAlbumList(sortedResult);

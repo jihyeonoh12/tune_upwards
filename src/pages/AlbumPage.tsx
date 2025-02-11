@@ -28,10 +28,12 @@ export const AlbumPage = () => {
     const [imgSrc, setImgSrc] = useState(noAlbumCover);
     const audioRef = useRef<HTMLAudioElement>(null);
     const [likedIcon, setLikedIcon] = useState(false);
-
+   
     useEffect(() => {
         window.scrollTo(0, 0);
+    },[])
 
+    useEffect(() => {
         const getSongs = async () => {
             try {
              setLoading(true);
