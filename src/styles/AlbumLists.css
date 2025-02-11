@@ -6,6 +6,8 @@
 
 .album-lists.loading {
   height: 800px;
+  text-align: center;
+  margin: auto;
 }
 
 .album-lists .grid {
