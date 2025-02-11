@@ -8,7 +8,7 @@ export const FavoritesPage = () => {
 
     if(Object.keys(favorites).length === 0) <></>;
     return (
-        <div className="favorite-page container-lg">
+        <div className="favorite-page container lg">
             {Object.keys(favorites).length === 0 ? (
                 <h1>Start adding albums you love</h1>
             ) : (

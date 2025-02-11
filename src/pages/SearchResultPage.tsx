@@ -26,7 +26,7 @@ export const SearchResultPage = () => {
       }, [location.search, albums]);
     
     return (
-    <div className='container-lg search-page'>
+    <div className='container lg search-page'>
       {filteredAlbums.length === 0 ? (
         <div className='text-box'>
            <h1>No matches were found</h1>

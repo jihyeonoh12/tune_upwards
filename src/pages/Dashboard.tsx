@@ -43,8 +43,8 @@ const Dashboard = () => {
       }, [sortedAlbumList])
 
 
-    if(loading) return <div className='loading-box'><h1>Loading...</h1></div>
-    if(error) return <div>{error}</div>
+    if(loading) return <></>
+    if(error) return <></>
     
     return (
         <div className='dashboard'>
