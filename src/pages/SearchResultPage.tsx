@@ -12,6 +12,7 @@ export const SearchResultPage = () => {
     const [searchInput, setSearchInput] = useState("");
 
     useEffect(() => {
+      window.scrollTo(0, 0);
         const searchParams = new URLSearchParams(location.search);
         const input = searchParams.get('input')|| '';
 

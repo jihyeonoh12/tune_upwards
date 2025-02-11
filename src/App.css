@@ -24,6 +24,11 @@
   width: 100%;
 }
 
+.search-page {
+  margin: 100px auto 40px;
+
+}
+
 .search-page .text-box {
   text-align: center;
   margin: 50px;
@@ -36,4 +41,10 @@
 
 .error {
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  .search-page  {
+      margin-top: 63px;
+  }
 }
