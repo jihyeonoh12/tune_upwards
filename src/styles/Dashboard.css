@@ -10,11 +10,9 @@
   .g1 {
     filter: blur(200px) ;
     border-radius: 1000px;
-
     position: absolute;
     background: radial-gradient(rgb(0 228 255 / 60%) 0, rgb(0 237 255 / 35%) 50%, rgb(34 255 251 / 10%) 50%);
     mix-blend-mode: hard-light;
-
     width: 50%;
     height: 50%;
     top: 0;

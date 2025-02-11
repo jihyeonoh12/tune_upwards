@@ -1,4 +1,3 @@
-/* src/Navbar.css */
 .navbar {
     background-color: transparent;
     padding: 1rem;
@@ -8,7 +7,7 @@
     background-color: #0000008c;
     z-index: 100;
     backdrop-filter: blur(10px);
-
+    height: 63px;;
     top: 0;
   }
   .navbar .container-xlg {

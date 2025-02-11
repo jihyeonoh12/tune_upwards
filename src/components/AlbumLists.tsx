@@ -5,13 +5,13 @@ import "../styles/AlbumLists.css"
 
 
 export const AlbumLists = ({
-    albums, 
+    visibleAlbums, 
     offset, 
     totalNumber,
     loadMore,
     handleSort,
 } : {
-    albums: Album[], 
+    visibleAlbums: Album[], 
     offset: number, 
     totalNumber: number,
     loadMore:() => void,
@@ -39,7 +39,7 @@ export const AlbumLists = ({
             observer.disconnect();
         }
         return () => observer.disconnect(); 
-      }, [albums, loadMore, offset]);
+      }, [loadMore, offset, visibleAlbums]);
 
       const scrollToTop = () => {
         window.scrollTo({
@@ -47,9 +47,9 @@ export const AlbumLists = ({
           behavior: 'smooth',
         });
       };
+      console.log(totalNumber);
 
-
-    if(albums.length === 0) <></>;
+    if(visibleAlbums.length === 0) <></>;
 
     return (
         <div className="album-lists">
@@ -63,7 +63,7 @@ export const AlbumLists = ({
              </select>
              </div>
             <div className="grid">
-            {albums.map((album) => (
+            {visibleAlbums.map((album) => (
                 <AlbumCard 
                 id={album.id.attributes["im:id"]}
                 image={album['im:image'][2].label} 

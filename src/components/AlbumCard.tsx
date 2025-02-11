@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import noAlbumCover from "../assets/noAlbumCover.jpg"
 
 export const AlbumCard = ({
@@ -22,15 +22,18 @@ export const AlbumCard = ({
     const handleError = () => {
         setImgScr(noAlbumCover);
     };
+    useEffect(() => {
+        setImgScr(image.split("jpg/")[0] + 'jpg/300x300bb.jpg');
+    }, [image])
 
     if (!image) return <></>;
 
     return (
         <Link className={`${layout} card`} to={`/album/${id}`}>
 
-            <div className="flip-card">
-            <div className="flip-card-inner">
-                <div className="flip-card-front">
+            <div className="album-card">
+            <div className="album-card-inner">
+                <div className="album-card-front">
                 <img 
                 width="300" height="300" 
                 src={imgScr} 
@@ -39,9 +42,9 @@ export const AlbumCard = ({
                 onError={handleError}
                 />
                 </div>
-                <div className="flip-card-back">
+                <div className="album-card-back">
                 <div className="text-box">
-                <div className="w-200">
+                <div>
                 <h4>{name}</h4>
                 <p>{artist}</p>
                 </div>

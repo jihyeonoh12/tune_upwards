@@ -1,21 +1,19 @@
-* {
-  margin: 0;
-}
+
 *,
 *::before,
 *::after {
   font-family: inherit;
   box-sizing: border-box;
+  margin: 0;
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", "DM Sans", Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,7 +23,6 @@
 
 #root {
   width: 100%;
-  /* background-color: black; */
   }
 
 body {
@@ -34,6 +31,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: black;
+  color: white ;
 }
 
 h1 {
@@ -41,8 +40,99 @@ h1 {
   line-height: 1.1;
 }
 
+p {
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
 a { 
   color: inherit; 
   text-decoration: none;
   cursor:pointer;  
 } 
+
+a:hover {
+  color: rgba(255, 255, 255, 0.696);
+}
+
+form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+img {
+  display: block;
+}
+
+
+button, .btn {
+  width: fit-content;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  text-align: center;
+  padding: 10px 20px;
+
+  border: 1px solid white;
+  transition: 0.25s;
+}
+
+.btn:hover{
+  background-color: white;
+  color: black;
+}
+
+button, .sub_btn, .sub_btn {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid white;
+  width: fit-content;
+  padding: 10px;
+  transition: 0.25s;
+}
+
+.sub_btn:hover {
+  padding: 10px 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid white;
+  max-width: 200px;
+  min-width: 200px;
+  width: 100%;
+  color: white;
+  background-color: transparent;
+  transition: 0.25s;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:hover,
+input:focus,
+input:focus-visible
+ {
+  min-width: 240px;
+  background-color: transparent;
+  outline: none;
+}
+
+a.link {
+text-decoration: none;
+color: white;
+border-bottom: 1px solid white;
+}
+
+

@@ -24,99 +24,10 @@
 .dashboard-body {
   margin: auto;
   padding: 0 15px;
-  
-}
-
-button, .btn {
-  width: fit-content;
-  white-space: nowrap;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 50px;
-  padding: 10px;
-  text-align: center;
-  padding: 10px 20px;
-
-  border: 1px solid white;
-  transition: 0.25s;
-}
-
-.btn:hover{
-  background-color: white;
-  color: black;
-}
-
-button, .sub_btn, .sub_btn {
-  border-radius: 0;
-  border: none;
-  border-bottom: 1px solid white;
-  width: fit-content;
-  padding: 10px;
-  transition: 0.25s;
-}
-
-.sub_btn:hover {
-  padding: 10px 20px;
-}
-
-
-form {
-  display: flex;
+  min-height: 500px;
+  height: 100%;
   width: 100%;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 50px;
 }
-
-input {
-  padding: 10px;
-  font-size: 18px;
-  border: none;
-  border-bottom: 1px solid white;
-  max-width: 200px;
-  min-width: 200px;
-  width: 100%;
-  color: white;
-  background-color: transparent;
-  transition: 0.25s;
-}
-
-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-input:hover,
-input:focus,
-input:focus-visible
- {
-  min-width: 240px;
-  background-color: transparent;
-  outline: none;
-}
-
-p {
-  font-size: 16px;
-  letter-spacing: 0;
-  font-weight: 100;
-}
-
-img {
-  display: block;
-}
-
-a.link {
-text-decoration: none;
-color: white;
-border-bottom: 1px solid white;
-}
-
-a:hover {
-  color: rgba(255, 255, 255, 0.696);
-}
-
 
 .search-page .text-box {
   text-align: center;

@@ -25,13 +25,13 @@ const Dashboard = () => {
         } 
     }, [albums])
 
-    const handleSort =  (option : string) => {
+    const handleSort = useCallback((option : string) => {
+        console.log(option);
         setOffset(10);
-
         const sortedResult = option === "Most Popular" ? albums : sortAlbums(albums, option);
         setSortedAlbumList(sortedResult);
         setVisibleAlbums(sortedResult.slice(0, 10))
-    }
+    }, [albums])
 
     const loadMore = useCallback(() => {
         //I decided to fetch all results and displaying only 10 at a time(imitaing fetch call)
@@ -54,7 +54,7 @@ const Dashboard = () => {
             />
             <div className='dashboard-body'>
             <AlbumLists 
-            albums={visibleAlbums} 
+            visibleAlbums={visibleAlbums} 
             offset={offset} 
             totalNumber={totalNumber}
             loadMore={loadMore} 
