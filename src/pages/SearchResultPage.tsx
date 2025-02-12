@@ -29,12 +29,12 @@ export const SearchResultPage = () => {
     return (
     <div className='container lg search-page'>
       {filteredAlbums.length === 0 ? (
-        <div className='text-box'>
+        <div className='search text-box'>
            <h1>No matches were found</h1>
            <p>Please try other inputs</p>
         </div>
       ) : (
-        <div className='text-box'>
+        <div className='search text-box'>
           <h1>Search result for...</h1>
           <p>{searchInput}</p>
         </div>

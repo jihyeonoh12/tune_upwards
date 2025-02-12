@@ -26,12 +26,13 @@
 
 .search-page {
   margin: 100px auto 40px;
-
 }
 
-.search-page .text-box {
+.search.text-box {
   text-align: center;
-  margin: 50px;
+  margin: auto 5px;
+  padding: 50px;
+
 }
 
 .favorite-page h1 {
@@ -44,7 +45,7 @@
 }
 
 @media (min-width: 700px) {
-  .search-page  {
-      margin-top: 63px;
+  .search.text-box {
+    padding: 50px;
   }
 }

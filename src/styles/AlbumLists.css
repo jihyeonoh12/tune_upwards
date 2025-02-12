@@ -25,7 +25,7 @@
 }
 
 .album.card {
-  flex: 1 0 24%; 
+  flex: 1 0 42%;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -173,6 +173,9 @@ select {
 }
 
 @media (min-width: 500px) {
+  .album.card {
+    flex: 1 0 24%; }
+    
   .album-lists .grid {
     grid-template-columns: repeat(3, 1fr);
   }
