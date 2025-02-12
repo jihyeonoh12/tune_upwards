@@ -1,6 +1,7 @@
 const API_URL = process.env.NODE_ENV === "development"
   ? "http://localhost:3031/api/" 
-  : "https://tune-upwards.onrender.com/";
+  : "https://tune-upwards.onrender.com/api/"
+
 
 const fetchTopItuneAlbums = async () => {
     try {
