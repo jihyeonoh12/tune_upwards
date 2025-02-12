@@ -32,30 +32,29 @@ export const AlbumCard = ({
         <Link className={`${layout} card`} to={`/album/${id}`}>
 
             <div className="album-card">
-            <div className="album-card-inner">
-                <div className="album-card-front">
-                <img 
-                width="300" height="300" 
-                src={imgScr} 
-                alt={name + '-album_cover'} 
-                loading="lazy"
-                onError={handleError}
-                />
+                <div className="album-card-inner">
+                    <div className="album-card-front">
+                        <img 
+                        width="300" height="300" 
+                        src={imgScr} 
+                        alt={name + '-album_cover'} 
+                        loading="lazy"
+                        onError={handleError}
+                        />
+                    </div>
+                    <div className="album-card-back">
+                        <div className="text-box">
+                            <div>
+                                <h4>{name}</h4>
+                                <p>{artist}</p>
+                            </div>
+                            {releaseDate && (
+                                <h5>{releaseDate}</h5>
+                            )}
+                        </div>
+                    </div>
                 </div>
-                <div className="album-card-back">
-                <div className="text-box">
-                <div>
-                <h4>{name}</h4>
-                <p>{artist}</p>
-                </div>
-                {releaseDate && (
-                    <h5>{releaseDate}</h5>
-                )}
             </div>
-                </div>
-            </div>
-            </div>
-
         </Link>
     )
 }

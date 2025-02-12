@@ -38,10 +38,12 @@ export const AlbumPage = () => {
             try {
              setLoading(true);
               const response = await fetchSongs(id as string);
-              setSongs(response.results);
-              setAlbum(response.results[0]);
-              setImgSrc((response.results[0].artworkUrl60).split("jpg/")[0] + 'jpg/400x400bb.jpg');
 
+              if(response) {
+                setSongs(response.results);
+                setAlbum(response.results[0]);
+                setImgSrc((response.results[0].artworkUrl60).split("jpg/")[0] + 'jpg/400x400bb.jpg');
+              }
             } catch (err) {
                 setError("Error Fetching Album Detail")
                 console.error(err);
@@ -79,7 +81,7 @@ export const AlbumPage = () => {
             <div className='inner-container'>
                 <img 
                 width="400" height="400" 
-                src={imgSrc} 
+                src={imgSrc || noAlbumCover} 
                 alt={album.collectionName + '-album_cover'} 
                 loading="lazy"
                 onError={handleError}
@@ -109,7 +111,7 @@ export const AlbumPage = () => {
             </div>
             <div className='container song-list'>
             {songs.map((song, index) => (
-               <div>
+               <div key={song + '-' + index}>
                     {index !== 0 && (
                         <SongCard 
                         preview={song.previewUrl}

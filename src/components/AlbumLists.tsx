@@ -27,7 +27,6 @@ export const AlbumLists = ({
         const observer = new IntersectionObserver(
           (entries) => {
             if (entries[0].isIntersecting) {
-                console.log('test');
                 loadMore();
             }
           },
@@ -62,7 +61,9 @@ export const AlbumLists = ({
              </div>
             <div className="grid">
             {visibleAlbums.map((album) => (
+              <div  key={album.id.attributes["im:id"]}>
                 <AlbumCard 
+               
                 id={album.id.attributes["im:id"]}
                 image={album['im:image'][2].label} 
                 name={album['im:name'].label}
@@ -70,6 +71,7 @@ export const AlbumLists = ({
                 releaseDate={album['im:releaseDate'].attributes.label}
                 layout={'album'}
                 />
+                </div>
             ))}
             </div>
             { offset < totalNumber ? (

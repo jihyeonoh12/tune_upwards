@@ -19,6 +19,7 @@ export const FavoritesPage = () => {
                 <div className='flex'>
             {Object.values(favorites).map((content) => (
                 <AlbumCard 
+                key={content.detail.collectionId}
                 id={content.detail.collectionId}
                 name={content.detail.collectionName}
                 image={content.detail.artworkUrl60} 
